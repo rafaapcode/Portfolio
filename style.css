@@ -199,3 +199,194 @@ a:hover{
     visibility: visible;
     opacity: 1;
 }
+
+/* Cards */
+
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.card-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+}
+
+.card{
+    height: 300px;
+    width: 400px;
+    margin: 3rem 0;
+    text-align: center;
+    background: url('/assets/Background\ Code2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(1);
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.card:nth-child(1){
+    height: 300px;
+    width: 400px;
+    margin: 3rem 0;
+    background: url('/assets/Background\ Code.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(1);
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.card-text{
+    width: 40%;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    color: gray;
+}
+
+.card-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-wrapper::before{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    display: block;
+    border: 1px solid white;
+    opacity: 0;
+    transition: .5s;
+}
+
+.card-wrapper h2 a{
+    font-size: 40px;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    transform: .5s;
+    position:relative;
+}
+
+
+.card-wrapper p a{
+    font-size: 0;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    visibility: hidden;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.card-wrapper h2 a:hover, .card-wrapper p a:hover{
+    background-color: transparent;
+}
+
+.card:hover{
+    filter: unset;
+}
+
+.card:hover > .card-wrapper::before{
+    opacity: 1;
+    width: 350px;
+    height: 250px;
+}
+
+.card:hover > .card-wrapper p a{
+    font-size: 14px;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Footer */
+
+.footer{
+    font-weight: bolder;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/assets/Background\ footer.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: .7s ease-in-out;
+    text-transform: uppercase;
+    filter: grayscale(1)
+}
+
+.footer a{
+    text-decoration: none;
+    background-color: transparent;
+    color: white;
+}
+
+.footer:hover{
+    filter: unset;
+}
+
+/* Responsivo */
+
+@media (max-width: 800px){
+    .social-media{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container{
+        margin-top: 0;
+    }
+
+    .card-container{
+        flex-direction: column;
+    }
+
+    .container .card-container:nth-child(1), .container .card-container:nth-child(3){
+        flex-direction: column-reverse;
+    }
+
+    .card{
+        height: 250px;
+        width: 250px;
+    }
+
+    .card-text{
+        width: 90%;
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    .card:hover > .card-wrapper::before{
+        height: 190px;
+        width: 190px;
+    }
+}
