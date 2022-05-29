@@ -22,6 +22,33 @@ body{
     animation: backgroundAnimation 8s ease-in-out infinite;
 }
 
+h1::before{
+    content: " ";
+    font-size: 10px;
+    color: black;
+    text-align: center;
+    line-height: 15px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 5px;
+    transform: translateY(-10px);
+    background-color: rgba(255,255,255,0.5);
+    opacity: 0;
+    visibility: hidden;
+    border: 1px solid black;
+    transition: .5s cubic-bezier(0.55,0.025,0.675,0.97);
+}
+
+.title-wrapper:hover > h1::before{
+    content: " Olá, sou o Rafael tenho 18 anos e estou estudando Front-End, aqui embaixo tem o link do meu Linkedin e GitHub para você acompanhar a minha evolução. :) ";
+    width: 380px;
+    height: 80px;
+    transform: translateY(-90px);
+    opacity: 1;
+    visibility: visible;
+}
+
 h1, h2{
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -49,6 +76,34 @@ a:hover{
     color: rgb(71, 15, 57);
     background-color: #fff;
 }
+
+.arrows{
+    background: url("/assets/seta-para-baixo.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 5%;
+    height: 3rem;
+    position: absolute;
+    bottom: 5%;
+    transform: translateY(0);
+    animation: arrowDown 1s ease-in-out infinite;
+}
+
+@keyframes arrowDown{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(10px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
 
 @keyframes backgroundAnimation{
     0%{
